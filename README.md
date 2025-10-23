@@ -56,7 +56,6 @@ Follow these steps to get the project running on your local machine:
 | Focus Area | Choice | Rationale |
 | :--- | :--- | :--- |
 | **API Interaction** | **Mimicked Fetching with Local Storage** | Since no external API was provided, data fetching is simulated using a custom hook (`useContactsPersistence`). This hook includes a `setTimeout` of 500ms to mimic network latency, allowing for the correct implementation of a **Loading State**. |
-| **Data Persistence** | **Browser Local Storage** | To meet the expectation of seeing newly added contacts on a page refresh, Local Storage is used as the persistence layer for the contact list. This is the standard frontend solution when a backend is not available. |
 | **Search Performance** | **`useMemo` Hook** | The filtering logic in `App.jsx` is wrapped in `useMemo`. This performance optimization ensures the contact list is only re-filtered when the list itself or the search term changes, preventing unnecessary recalculations and ensuring a smooth, real-time search experience. |
 | **State Management** | **Prop Passing & Custom Hooks** | State is managed centrally in `App.jsx` and distributed using standard React prop passing. The creation of `useContactsPersistence` demonstrates separation of concerns by isolating the data fetching and storage logic. |
 
