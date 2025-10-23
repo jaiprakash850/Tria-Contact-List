@@ -1,16 +1,79 @@
-# React + Vite
+# Tria Contact Book 📞
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a single-page contact list application built using React, designed to assess frontend development skills.
 
-Currently, two official plugins are available:
+## ✨ Features Implemented
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The application successfully meets all core and optional requirements:
 
-## React Compiler
+1.  **View Contact List:** Displays a list of contacts with personal details.
+2.  **Search Contacts:** Implements real-time, case-insensitive filtering by contact name.
+3.  **Add New Contact:** Allows users to add a new contact via a clean modal interface.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+-----
 
-## Expanding the ESLint configuration
+## 🚀 Live Application & Source
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Description | Link |
+| :--- | :--- |
+| **Live Demo URL** | [cite\_start]`[INSERT YOUR VERCELL/NETLIFY DEPLOYED LINK HERE]` [cite: 18] |
+| **Source Code Repository** | https://github.com/jaiprakash850/Tria-Contact-List |
+
+-----
+
+## 🛠️ Local Setup and Run Instructions
+
+Follow these steps to get the project running on your local machine:
+
+1.  **Clone the Repository:**
+
+    ```bash
+    git clone https://github.com/jaiprakash850/Tria-Contact-List.git
+    cd tria-contact-list
+    ```
+
+2.  **Install Dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+3.  **Run the Development Server (Vite):**
+
+    ```bash
+    npm run dev
+    ```
+
+4.  **Access the Application:**
+    Open your web browser and navigate to the address shown in the terminal (usually `http://localhost:5173/`).
+
+-----
+
+## 💡 Technical and Design Highlights
+
+### Engineering Assumptions & Implementation Choices
+
+| Focus Area | Choice | Rationale |
+| :--- | :--- | :--- |
+| **API Interaction** | **Mimicked Fetching with Local Storage** | Since no external API was provided, data fetching is simulated using a custom hook (`useContactsPersistence`). This hook includes a `setTimeout` of 500ms to mimic network latency, allowing for the correct implementation of a **Loading State**. |
+| **Data Persistence** | **Browser Local Storage** | To meet the expectation of seeing newly added contacts on a page refresh, Local Storage is used as the persistence layer for the contact list. This is the standard frontend solution when a backend is not available. |
+| **Search Performance** | **`useMemo` Hook** | The filtering logic in `App.jsx` is wrapped in `useMemo`. This performance optimization ensures the contact list is only re-filtered when the list itself or the search term changes, preventing unnecessary recalculations and ensuring a smooth, real-time search experience. |
+| **State Management** | **Prop Passing & Custom Hooks** | State is managed centrally in `App.jsx` and distributed using standard React prop passing. The creation of `useContactsPersistence` demonstrates separation of concerns by isolating the data fetching and storage logic. |
+
+### Design and UX Choices
+
+| UX Feature | Implementation | Rationale |
+| :--- | :--- | :--- |
+| **Layout** | Centered, fixed-width content (`max-w-xl`). | Provides a clean, focused reading experience, prioritizing readability over screen-filling elements. |
+| **Styling** | **Tailwind CSS** with elevated cards. | Utilizes modern, utility-first styling for rapid development and delivers a professional, polished aesthetic with clear focus states and interactive hover effects. |
+| **Adding Contact** | **Modal Dialog** (`AddContactModal.jsx`). | Using a modal provides a dedicated, focused user flow for data entry, minimizing distractions and improving form completion rates. |
+
+-----
+
+## 📦 Libraries Chosen
+
+| Library | Type | Reason for Selection |
+| :--- | :--- | :--- |
+| **React (Vite)** | Framework/Tooling | Mandatory requirement and chosen for its speed and modern tooling. |
+| **Tailwind CSS** | Styling | Chosen for rapid, utility-first development and easy creation of responsive, professional designs. |
+| **Lucide-React** | Icons | A lightweight and modern icon library used to enhance UX in the Contact Cards, Search Bar, and Modal. |
