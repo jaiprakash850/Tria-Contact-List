@@ -16,7 +16,7 @@ The application successfully meets all core and optional requirements:
 
 | Description | Link |
 | :--- | :--- |
-| **Live Demo URL** | [cite\_start]`[INSERT YOUR VERCELL/NETLIFY DEPLOYED LINK HERE]` [cite: 18] |
+| **Live Demo URL** | https://tria-contact-list-two.vercel.app/ |
 | **Source Code Repository** | https://github.com/jaiprakash850/Tria-Contact-List |
 
 -----
