@@ -7,7 +7,7 @@ This is a single-page contact list application built using React, designed to as
 The application successfully meets all core and optional requirements:
 
 1.  **View Contact List:** Displays a list of contacts with personal details.
-2.  **Search Contacts:** Implements real-time, case-insensitive filtering by contact name.
+2.  **Search Contacts:** Implements real-time, case-insensitive filtering with contact name.
 3.  **Add New Contact:** Allows users to add a new contact via a clean modal interface.
 
 -----
